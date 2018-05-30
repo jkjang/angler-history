@@ -1,0 +1,2 @@
+# private-sns
+# angler-history
