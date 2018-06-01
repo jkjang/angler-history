@@ -9,8 +9,8 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={Timeline} />
-          <Route exact path="/Randing" component={Randing} />
-          <Route path="/Randing/:name" component={Randing} />
+          <Route exact path="/randing" component={Randing} />
+          <Route path="/randing/:name" component={Randing} />
         </Switch>
       </div>
     );

@@ -16,10 +16,11 @@ class Randing extends Component {
       .props
       .documents
       .reverse()
-      .map(document => <div>{document.content}</div>);
+      .map(document => <div>{document.createDate}</div>);
 
     return (
       <div>
+        params name : {this.props.match.params.name}
         {documents}
       </div>
     );
