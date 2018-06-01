@@ -16,7 +16,7 @@ class Randing extends Component {
       .props
       .documents
       .reverse()
-      .map(docment => <div>{docment.content}</div>);
+      .map(document => <div>{document.content}</div>);
 
     return (
       <div>
