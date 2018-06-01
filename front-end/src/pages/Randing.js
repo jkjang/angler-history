@@ -11,7 +11,7 @@ class Randing extends Component {
       .loadDocuments();
   }
   render() {
-    console.log('aaa');
+    console.log(this.props);
     const documents = this
       .props
       .documents
