@@ -1,8 +1,22 @@
+/** */
+import axios from 'axios';
+
 /* ACTION TYPE */
-const LOAD_DOCUMENTS = 'LOAD_DOCUMENTS';
+const url = process.env.NODE_ENV === 'production'
+  ? '/api/'
+  : 'http://localhost:5000/api/';
 
 export default function loadDocuments() {
   return (dispatch) => {
-    dispatch({ type: LOAD_DOCUMENTS, modalMode: false });
+    axios
+      .get(`${url}documents`)
+      .then((res) => {
+        const documents = res.data;
+        console.log(documents);
+        dispatch({ type: 'LOAD_DOCUMENTS', documents });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 }
