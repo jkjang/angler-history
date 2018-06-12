@@ -13,7 +13,7 @@ export default function loadDocuments() {
       .then((res) => {
         const documents = res.data;
         console.log(documents);
-        dispatch({ type: 'LOAD_DOCUMENTS', documents });
+        dispatch({type: 'LOAD_DOCUMENTS', documents});
       })
       .catch((err) => {
         console.log(err);

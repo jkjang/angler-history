@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-eslint": "^8.2.3",
+    "eslint-config-react-app": "^2.1.0",
     "history": "^4.7.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
