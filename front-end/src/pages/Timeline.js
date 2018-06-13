@@ -6,23 +6,23 @@ const mapStateToProps = state => ({ documents: state.documents.documents });
 
 class Randing extends Component {
   componentDidMount() {
-    this
-      .props
-      .loadDocuments();
+    this.props.loadDocuments();
   }
   render() {
-    const documents = this
-      .props
-      .documents
+    const documents = this.props.documents
       .reverse()
       .map(document => <div>{document.title}</div>);
 
     return (
       <div>
+        <div>div</div>
         {documents}
       </div>
     );
   }
 }
 
-export default connect(mapStateToProps, { loadDocuments })(Randing);
+export default connect(
+  mapStateToProps,
+  { loadDocuments },
+)(Randing);

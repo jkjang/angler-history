@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import loadDocuments from './../redux/actions/actions';
+import Header from './../components/base/Header';
 
 const mapStateToProps = state => ({ documents: state.documents.documents });
 
 class Randing extends Component {
   componentDidMount() {
-    this
-      .props
-      .loadDocuments();
+    this.props.loadDocuments();
   }
   render() {
     console.log(this.props);
-    const documents = this
-      .props
-      .documents
+    const documents = this.props.documents
       .reverse()
       .map(document => <div>{document.createDate}</div>);
 
     return (
       <div>
+        <Header />
         params name : {this.props.match.params.name}
         {documents}
       </div>
@@ -27,4 +25,7 @@ class Randing extends Component {
   }
 }
 
-export default connect(mapStateToProps, { loadDocuments })(Randing);
+export default connect(
+  mapStateToProps,
+  { loadDocuments },
+)(Randing);
