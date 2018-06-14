@@ -28,14 +28,14 @@ class Header extends Component {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="mx-3"
+                className="search"
               >
                 <circle cx="10.5" cy="10.5" r="7.5" />
                 <line x1="21" y1="21" x2="15.8" y2="15.8" />
               </svg>
             </a>
             <a className="btn btn-sm btn-outline-secondary" href="#">
-              Sign up
+              Get Started
             </a>
           </div>
         </div>
