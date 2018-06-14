@@ -73,6 +73,7 @@ module.exports = {
     modules: ['node_modules', paths.appNodeModules].concat(
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean),
+      path.resolve('./src'),
     ),
     // These are the reasonable defaults supported by the Node ecosystem.
     // We also include JSX as a common component filename extension to support
@@ -228,10 +229,10 @@ module.exports = {
           // that fall through the other loaders.
           {
             // Exclude `js` files to keep "css" loader working as it injects
-            // its runtime that would otherwise processed through "file" loader.
+            // it's runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
+            exclude: [/\.js$/, /\.html$/, /\.json$/],
             loader: require.resolve('file-loader'),
             options: {
               name: 'static/media/[name].[hash:8].[ext]',

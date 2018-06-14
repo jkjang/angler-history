@@ -1,6 +1,6 @@
-.header {
+.headers {
   width: 100%;
-  background: red;
+  background-color: red;
 }
 .conatiner {
   max-width: 100px;

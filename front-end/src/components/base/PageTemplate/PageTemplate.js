@@ -7,13 +7,11 @@ type Props = {
   children: Node,
 };
 
-const PageTemplate = ({ header, children }: Props) => {
-  return (
-    <div className="PageTemplate">
-      {header}
-      <main>{children}</main>
-    </div>
-  );
-};
+const PageTemplate = ({ header, children }: Props) => (
+  <div className="PageTemplate">
+    {header}
+    <main>{children}</main>
+  </div>
+);
 
 export default PageTemplate;
