@@ -73,7 +73,6 @@ module.exports = {
     modules: ['node_modules', paths.appNodeModules].concat(
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean),
-      path.resolve('./src'),
     ),
     // These are the reasonable defaults supported by the Node ecosystem.
     // We also include JSX as a common component filename extension to support
@@ -184,44 +183,6 @@ module.exports = {
               },
             ],
           },
-          {
-            test: /\.scss$/,
-            use: [
-              require.resolve('style-loader'),
-              {
-                loader: require.resolve('css-loader'),
-                options: {
-                  importLoaders: 1,
-                },
-              },
-              {
-                loader: require.resolve('postcss-loader'),
-                options: {
-                  // Necessary for external CSS imports to work
-                  // https://github.com/facebookincubator/create-react-app/issues/2677
-                  ident: 'postcss',
-                  plugins: () => [
-                    require('postcss-flexbugs-fixes'),
-                    autoprefixer({
-                      browsers: [
-                        '>1%',
-                        'last 4 versions',
-                        'Firefox ESR',
-                        'not ie < 9', // React doesn't support IE8 anyway
-                      ],
-                      flexbox: 'no-2009',
-                    }),
-                  ],
-                },
-              },
-              {
-                loader: require.resolve('sass-loader'),
-                options: {
-                  includePaths: [paths.styles],
-                },
-              },
-            ],
-          },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
@@ -237,6 +198,11 @@ module.exports = {
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },
+          },
+          {
+            test: /\.scss$/,
+            include: paths.appSrc,
+            loaders: ['style', 'css', 'sass'],
           },
         ],
       },

@@ -1,7 +1,9 @@
 .header {
-  width: 100%;
+  width: 200px;
+  height: 200px;
   background: red;
-}
-.conatiner {
-  max-width: 100px;
+  border: 1px solid red;
+  .container {
+    max-width: 100px;
+  }
 }
