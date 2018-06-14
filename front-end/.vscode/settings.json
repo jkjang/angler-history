@@ -3,7 +3,7 @@
   "explorer.confirmDelete": false,
   "window.zoomLevel": 0,
   "explorer.confirmDragAndDrop": false,
-  "workbench.colorTheme": "Tomorrow Night Blue",
+  "workbench.colorTheme": "Visual Studio Dark",
   "files.associations": {
     "*.js": "javascriptreact"
   },
