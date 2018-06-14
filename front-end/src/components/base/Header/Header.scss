@@ -1,14 +1,11 @@
-.align-items-center {
-  -ms-flex-align: center !important;
-  align-items: center !important;
-}
-.justify-content-between {
-  -ms-flex-pack: justify !important;
-  justify-content: space-between !important;
-}
-.flex-nowrap {
-  -ms-flex-wrap: nowrap !important;
-  flex-wrap: nowrap !important;
+@import "utils";
+
+.header {
+  line-height: 1;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 1rem !important;
+  padding-top: 1rem !important;
+  color: #007bff;
 }
 .row {
   display: -ms-flexbox;
@@ -17,4 +14,43 @@
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+}
+.flex-3 {
+  flex: 0 0 33.333333%;
+  align-items: center !important;
+  padding-top: 0.25rem !important;
+}
+.d-flex {
+  display: flex !important;
+}
+.header-logo {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 2.25rem;
+  color: #343a40 !important;
+  text-decoration: none;
+}
+.justify-content-end {
+  -ms-flex-pack: end !important;
+  justify-content: flex-end !important;
+}
+
+.btn {
+  @include common-button-style();
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @include material-shadow(2, 0.3);
+  background: white;
+  transition: all 0.1s ease-in;
+  &.save {
+    color: $oc-violet-6;
+  }
+  &.cancel {
+    color: $oc-gray-7;
+  }
+  &:hover {
+    @include material-shadow(2, 0.75);
+  }
+  &:active {
+    background: $oc-gray-0;
+  }
 }
