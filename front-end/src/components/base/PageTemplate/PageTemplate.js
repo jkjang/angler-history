@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import type { Node } from 'react';
+import 'components/base/PageTemplate/PageTemplate.scss';
 
 type Props = {
   header: Node,
@@ -8,8 +9,8 @@ type Props = {
 };
 
 const PageTemplate = ({ header, children }: Props) => (
-  <div className="PageTemplate">
-    {header}
+  <div className="container">
+    {header}aaaa
     <main>{children}</main>
   </div>
 );

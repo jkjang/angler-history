@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from 'components/base/Header';
 import loadDocuments from 'redux/actions/actions';
+import PageTemplate from 'components/base/PageTemplate';
 
 const mapStateToProps = state => ({ documents: state.documents.documents });
 
+type Props = {
+  header: Header,
+};
 class Randing extends Component {
   componentDidMount() {
     this.props.loadDocuments();
@@ -15,13 +19,7 @@ class Randing extends Component {
       .reverse()
       .map(document => <div>{document.createDate}</div>);
 
-    return (
-      <div>
-        <Header />
-        params name : {this.props.match.params.name}
-        {documents}
-      </div>
-    );
+    return <PageTemplate header={<Header />} />;
   }
 }
 

@@ -7,13 +7,11 @@ import './../styles/main.scss';
 class App extends Component {
   render() {
     return (
-      <div>
-        <Switch>
-          <Route exact path="/" component={Randing} />
-          <Route exact path="/randing" component={Randing} />
-          <Route path="/randing/:name" component={Randing} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/" component={Randing} />
+        <Route exact path="/randing" component={Randing} />
+        <Route path="/randing/:name" component={Randing} />
+      </Switch>
     );
   }
 }
