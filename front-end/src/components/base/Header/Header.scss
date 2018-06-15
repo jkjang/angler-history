@@ -37,10 +37,10 @@
       text-decoration: none;
     }
     .search {
-      margin-right: 1rem;
+      margin-right: 2rem;
       margin-left: 1rem;
+      color: $default-color;
       svg {
-        color: $default-color;
         cursor: pointer;
       }
     }
