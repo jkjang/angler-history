@@ -10,8 +10,8 @@ type Props = {
 
 const PageTemplate = ({ header, children }: Props) => (
   <div className="container">
-    {header}aaaa
-    <main>{children}</main>
+    {header}
+    <main>children{children}</main>
   </div>
 );
 
