@@ -18,8 +18,8 @@
   "editor.tabSize": 2,
   "git.enableSmartCommit": true,
   "prettier.eslintIntegration": true,
-  // "typescript.format.enable": false,
-  // "typescript.disableAutomaticTypeAcquisition": true,
-  "javascript.validate.enable": false
-  // "typescript.validate.enable": false
+  "typescript.format.enable": false,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": false
 }

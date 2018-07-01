@@ -9,10 +9,13 @@ import AuthForm from 'components/signin/AuthForm';
 
 const signInModalStateToProps = state => ({ open: state.open });
 
+type Props = {};
+
 type State = {
   open: boolean,
 };
-class Header extends Component<State> {
+
+class Header extends Component<Props, State> {
   state = {
     open: false,
   };
@@ -30,7 +33,7 @@ class Header extends Component<State> {
   };
 
   render() {
-    // const { onOpen, onClose } = this;
+    const { onOpen, onClose } = this;
     const { open } = this.state;
 
     return (
