@@ -54,18 +54,12 @@
       border-color: 1px solid red;
       transition: all 0.1s ease-in;
       color: $default-color;
-      // &.save {
-      //   color: $oc-violet-6;
-      // }
-      // &.cancel {
-      //   color: $oc-gray-7;
-      // }
-      // &:hover {
-      //   @include material-shadow(2, 0.75);
-      // }
-      // &:active {
-      //   background: $oc-gray-0;
-      // }
+    }
+    .no-outline {
+      border: none;
+    }
+    a.btn {
+      margin: 0 2px;
     }
   }
 }

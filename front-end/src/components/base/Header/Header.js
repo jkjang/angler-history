@@ -1,8 +1,38 @@
-import React, { Component } from 'react';
-import 'components/base/Header/Header.scss';
+// @flow
 
-class Header extends Component {
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import 'components/base/Header/Header.scss';
+import Modal from 'react-responsive-modal';
+import { openSignInModal } from 'redux/actions/actions';
+import AuthForm from 'components/signin/AuthForm';
+
+const signInModalStateToProps = state => ({ open: state.open });
+
+type State = {
+  open: boolean,
+};
+class Header extends Component<State> {
+  state = {
+    open: false,
+  };
+
+  onOpen = () => {
+    this.setState({
+      open: true,
+    });
+  };
+
+  onClose = () => {
+    this.setState({
+      open: false,
+    });
+  };
+
   render() {
+    // const { onOpen, onClose } = this;
+    const { open } = this.state;
+
     return (
       <header className="header py-3">
         <div className="row">
@@ -13,7 +43,7 @@ class Header extends Component {
           </div>
           <div className="flex-3 text-center">
             <a className="header-logo text-dark" href="#">
-              Fishing Story
+              Fishing History
             </a>
           </div>
           <div className="flex-3 d-flex justify-content-end align-items-center">
@@ -34,7 +64,13 @@ class Header extends Component {
                 <line x1="21" y1="21" x2="15.8" y2="15.8" />
               </svg>
             </a>
-            <a className="btn btn-sm btn-outline-secondary" href="#">
+            <a className="btn no-outline " href="#" onClick={this.onOpen}>
+              Sign in
+            </a>
+            <Modal open={open} onClose={this.onClose} center>
+              <h2>Simple centered modal</h2>
+            </Modal>
+            <a className="btn" href="#">
               Get Started
             </a>
           </div>
@@ -44,4 +80,9 @@ class Header extends Component {
   }
 }
 
-export default Header;
+// export default Header;
+
+export default connect(
+  signInModalStateToProps,
+  { openSignInModal },
+)(Header);

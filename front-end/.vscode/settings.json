@@ -3,7 +3,7 @@
   "explorer.confirmDelete": false,
   "window.zoomLevel": 0,
   "explorer.confirmDragAndDrop": false,
-  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.colorTheme": "Kimbie Dark",
   "files.associations": {
     "*.js": "javascriptreact"
   },
@@ -18,8 +18,8 @@
   "editor.tabSize": 2,
   "git.enableSmartCommit": true,
   "prettier.eslintIntegration": true,
-  "typescript.format.enable": false,
-  "typescript.disableAutomaticTypeAcquisition": true,
-  "javascript.validate.enable": false,
-  "typescript.validate.enable": false
+  // "typescript.format.enable": false,
+  // "typescript.disableAutomaticTypeAcquisition": true,
+  "javascript.validate.enable": false
+  // "typescript.validate.enable": false
 }

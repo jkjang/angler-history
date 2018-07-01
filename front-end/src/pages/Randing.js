@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from 'components/base/Header';
-import loadDocuments from 'redux/actions/actions';
+import { loadDocuments } from 'redux/actions/actions';
 import PageTemplate from 'components/base/PageTemplate';
 
 const mapStateToProps = state => ({ documents: state.documents.documents });

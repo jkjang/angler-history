@@ -2,11 +2,9 @@
 import axios from 'axios';
 
 /* ACTION TYPE */
-const url = process.env.NODE_ENV === 'production'
-  ? '/api/'
-  : 'http://localhost:5000/api/';
+const url = process.env.NODE_ENV === 'production' ? '/api/' : 'http://localhost:5000/api/';
 
-export default function loadDocuments() {
+export function loadDocuments() {
   return (dispatch) => {
     axios
       .get(`${url}documents`)
@@ -18,5 +16,13 @@ export default function loadDocuments() {
       .catch((err) => {
         console.log(err);
       });
+  };
+}
+
+export function openSignInModal(openCheck: boolean) {
+  return (dispatch) => {
+    const open = true;
+    console.log(`openSignInModal open = ${open}`);
+    dispatch({ type: 'OPEN_SIGNIN_MODAL', open });
   };
 }

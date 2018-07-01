@@ -1,5 +1,6 @@
 [ignore]
 ./node_modules/.*
+.*/src/registerServiceWorker\.js
 
 [include]
 ./node_modules/react.*
